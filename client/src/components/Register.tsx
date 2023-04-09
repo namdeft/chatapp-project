@@ -56,15 +56,15 @@ const Register: React.FC = () => {
                         Register
                     </Heading>
                     <Text fontSize={'lg'} color={'gray.600'}>
-                        to enjoy all of cool <Link color={'teal.400'}>features</Link> ✌️
+                        to enjoy all of cool <Link color={'teal.300'}>features</Link> ✌️
                     </Text>
                 </Stack>
                 <Box
                     rounded={'lg'}
-                    bg={useColorModeValue('white', 'gray.700')}
-                    boxShadow={'lg'}
+                    bg={useColorModeValue('#1d2334', 'gray.700')}
+                    boxShadow={'dark-lg'}
                     p={8}
-                    color='black'
+                    color='white'
                 >
                     <form onSubmit={formik.handleSubmit}>
                         <Stack spacing={4}>
@@ -172,7 +172,7 @@ const Register: React.FC = () => {
                             <Stack pt={3}>
                                 <Text align={'center'}>
                                     Already a user?{' '}
-                                    <Link href='/login' color={'teal.600'}>
+                                    <Link href='/login' color={'teal.300'}>
                                         Login
                                     </Link>
                                 </Text>

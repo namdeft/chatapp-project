@@ -21,14 +21,14 @@ const Login: React.FC = () => {
                 <Stack align={'center'}>
                     <Heading fontSize={'4xl'}>Log in to your account</Heading>
                     <Text fontSize={'lg'} color={'gray.600'}>
-                        to enjoy all of cool <Link color={'teal.400'}>features</Link> ✌️
+                        to enjoy all of cool <Link color={'teal.300'}>features</Link> ✌️
                     </Text>
                 </Stack>
                 <Box
-                    color='black'
+                    color='white'
                     rounded={'lg'}
-                    bg={useColorModeValue('white', 'gray.700')}
-                    boxShadow={'lg'}
+                    bg={useColorModeValue('#1d2334', 'gray.700')}
+                    boxShadow={'dark-lg'}
                     p={8}
                 >
                     <Stack spacing={4}>
@@ -49,7 +49,7 @@ const Login: React.FC = () => {
                                 justify={'space-between'}
                             >
                                 <Checkbox>Remember me</Checkbox>
-                                <Link href='/register' color={'teal.600'}>
+                                <Link href='/register' color={'teal.300'}>
                                     Not registed?
                                 </Link>
                             </Stack>
