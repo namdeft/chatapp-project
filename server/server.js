@@ -1,27 +1,29 @@
 import express from 'express';
 import * as dotenv from 'dotenv';
 import cors from 'cors';
+import { corsOptions } from './config/cors.js';
 
-import chats from './data/data.js';
 import connectDb from './config/db.js';
+
+import authRouter from './routers/auth.js';
+import usersRouter from './routers/users.js';
 
 dotenv.config();
 const PORT = process.env.PORT;
 
+// Initial express app
 const app = express();
-app.use(cors());
 
+// Global middlewares
+app.use(express.json());
+app.use(cors(corsOptions));
 connectDb();
 
-const corsOptions = {
-    origin: 'http://localhost:5173',
-    optionsSuccessStatus: 200,
-};
+// Routers
+app.use('/api/auth', authRouter);
+app.use('/api/users', usersRouter);
 
-app.get('/api/chats', cors(corsOptions), (req, res) => {
-    res.status(200).json(chats);
-});
-
+// App running
 app.listen(PORT, () => {
     console.log(`App is running in port: ${PORT}`);
 });
